@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "pkg-1"
+version = "0.1.0"
+description = "First package in repo"
+authors = ["tejasrinivask <tejasrinivas@amagi.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
