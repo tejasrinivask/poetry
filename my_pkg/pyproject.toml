@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "my-pkg"
+version = "0.1.0"
+description = ""
+authors = ["tejasrinivask <tejasrinivas@amagi.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pydantic = "1.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
