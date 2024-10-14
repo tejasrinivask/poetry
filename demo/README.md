@@ -1,0 +1,1 @@
+DOES SQUARE OF A
