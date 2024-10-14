@@ -6,7 +6,7 @@ authors = ["tejasrinivask <tejasrinivas@amagi.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 my-pkg = {git = "https://github.com/tejasrinivask/poetry.git", rev = "main", subdirectory = "my_pkg"}
 
 
