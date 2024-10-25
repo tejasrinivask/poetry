@@ -10,11 +10,11 @@ main = "main:main"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-redis = "^5.2.0"
+redis = "^4.3.4"
 
 [tool.poetry.group.test.dependencies]
 pytest = "*"
-redis = "^5.2.0"
+redis = "^4.3.4"
 
 [build-system]
 requires = ["poetry-core"]
