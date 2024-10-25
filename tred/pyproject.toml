@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "tred"
+version = "0.1.0"
+description = ""
+authors = ["tejasrinivask <tejasrinivas@amagi.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+main = "main:main"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+redis = "^5.2.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+redis = "^5.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
