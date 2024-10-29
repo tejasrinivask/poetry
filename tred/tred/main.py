@@ -8,6 +8,8 @@ from tred.utils.singleton import singleton
 logger = logging.getLogger(__name__)
 logging.basicConfig(format='%(asctime)s, %(levelname)s, [%(filename)s:%(lineno)d] Message: %(message)s', datefmt='%Y-%m-%d:%H:%M:%S', level=logging.INFO)
 
+h = Histogram("sample_redis_latency_histogram", "description for redis latency histogram", ["operation"], buckets=(.00001, .0001, .0002, .005, .01, .025, .05, .075, .1, .25, .5, .75, 1.0, 2.5, 5.0, 7.5, 10.0, float("inf")))
+
 @unique
 class Locks(Enum):
     NONE = 1
@@ -16,7 +18,7 @@ class Locks(Enum):
 
 @singleton
 class Tred:
-    def __init__(self, *args, redis_lock_execution_timeout: float = .1, redis_lock_blocking_timeout: float = .1, prometheus_histogram_object: Union[Any, None] = None, **kwargs) -> Any:
+    def __init__(self, *args, redis_lock_execution_timeout: float = .1, redis_lock_blocking_timeout: float = .1, prometheus_histogram_object: Union[Any, None] = h, **kwargs) -> Any:
         self.r = Redis(*args, **kwargs)
         self.local_locks_map:Dict = {}
         self.redis_lock_execution_timeout: float = redis_lock_execution_timeout
