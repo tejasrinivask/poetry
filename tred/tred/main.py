@@ -51,7 +51,7 @@ class Tred:
                 with self.r.lock(name=lock_name, timeout=self.redis_lock_execution_timeout, blocking_timeout=self.redis_lock_blocking_timeout):
                     # print(f"acquired distributed lock for {lock_name}")
                     if self.prometheus_histogram_object:
-                        with self.prometheus_histogram_object.time():
+                        with self.prometheus_histogram_object.labels(f_name).time():
                             return f(*args, **kwargs)
                     else:
                         return f(*args, **kwargs)
