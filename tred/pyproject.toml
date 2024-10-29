@@ -11,6 +11,8 @@ main = "main:main"
 [tool.poetry.dependencies]
 python = "^3.10"
 redis = "^4.3.4"
+prometheus-client = "^0.21.0"
+logger = "^1.4"
 
 [tool.poetry.group.test.dependencies]
 pytest = "*"
