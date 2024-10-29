@@ -4,6 +4,7 @@ from redis import Redis
 from threading import Lock, Thread
 from typing import Any, Dict, Union
 from tred.utils.singleton import singleton
+from prometheus_client import Histogram
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(format='%(asctime)s, %(levelname)s, [%(filename)s:%(lineno)d] Message: %(message)s', datefmt='%Y-%m-%d:%H:%M:%S', level=logging.INFO)
