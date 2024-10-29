@@ -29,7 +29,7 @@ class Tred:
         match lock_type:
             case Locks.NONE:
                 if self.prometheus_histogram_object:
-                    with self.prometheus_histogram_object.time():
+                    with self.prometheus_histogram_object.labels(f_name).time():
                         return f(*args, **kwargs)
                 else:
                     return f(*args, **kwargs)
@@ -41,7 +41,7 @@ class Tred:
                 with self.local_locks_map[lock_name]:
                     # print(f"acquired distributed lock for {lock_name}")
                     if self.prometheus_histogram_object:
-                        with self.prometheus_histogram_object.time():
+                        with self.prometheus_histogram_object.labels(f_name).time():
                             return f(*args, **kwargs)
                     else:
                         return f(*args, **kwargs)
